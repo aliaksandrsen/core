@@ -25,7 +25,6 @@ export function CourseItem({
       await onDelete();
     });
   };
-
   return (
     <Card>
       <CardHeader>
