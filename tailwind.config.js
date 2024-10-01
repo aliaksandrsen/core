@@ -14,7 +14,7 @@ export const theme = {
   },
   extend: {
     fontFamily: {
-      sans: ["var(--font-sans)", ...fontFamily.sans],
+      fontSans: ["var(--font-sans)", ...fontFamily.sans],
     },
     colors: {
       border: "hsl(var(--border))",

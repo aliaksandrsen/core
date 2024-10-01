@@ -11,7 +11,7 @@ class CoursesRepository {
     (): Promise<CourseListElement[]> => dbClient.course.findMany(),
   );
 
-  createCourseListElement = cache(
+  createCourseElement = cache(
     (command: CreateCourseListElementCommand): Promise<CourseListElement> => {
       return dbClient.course.create({
         data: command,
@@ -19,7 +19,7 @@ class CoursesRepository {
     },
   );
 
-  deleteCourseListElement = cache(
+  deleteCourseElement = cache(
     (command: DeleteCourseListElementCommand): Promise<CourseListElement> => {
       return dbClient.course.delete({
         where: { id: command.id },

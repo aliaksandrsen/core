@@ -12,7 +12,7 @@ export async function CoursesList({
   const handleDelete = async (courseId: string) => {
     "use server";
 
-    await coursesRepository.deleteCourseListElement({
+    await coursesRepository.deleteCourseElement({
       id: courseId,
     });
 
@@ -25,7 +25,7 @@ export async function CoursesList({
         <CourseItem
           key={course.id}
           course={course}
-          onDelete={() => handleDelete(course.id)}
+          onDelete={handleDelete.bind(null, course.id)}
         />
       ))}
     </div>
