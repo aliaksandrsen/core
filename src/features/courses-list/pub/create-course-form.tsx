@@ -44,7 +44,8 @@ export function CreateCourseForm({
       <form
         onSubmit={form.handleSubmit((data) => {
           startCreateTransition(async () => {
-            createCourseAction(data, revalidatePagePath);
+            await createCourseAction(data, revalidatePagePath);
+            form.reset();
           });
         })}
         className={cn(className, "space-y-4")}
